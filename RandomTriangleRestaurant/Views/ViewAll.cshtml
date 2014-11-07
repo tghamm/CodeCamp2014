@@ -1,0 +1,66 @@
+﻿@{
+    
+}
+
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>
+        <div class="col-xs-9">
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{{mySelection.Name}}</h2>
+                        <p>
+                            <ul class="list-inline list-unstyled">
+                                <li>
+                                    {{mySelection.Address}}
+                                </li>
+                                <li>|</li>
+                                <li>
+                                    {{mySelection.Phone}}
+                                </li>
+                                <li>|</li>
+                                <li>
+                                    {{mySelection.Email}}
+                                </li>
+                            </ul>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>
+                            <strong>Cuisine</strong><br />
+                            <span>{{mySelection.Cuisine}}</span>
+                        </p>
+                        <p>
+                            <strong>Pricing</strong><br />
+                            <span>{{mySelection.Pricing}}</span>
+                        </p>
+                        <p>
+                            <strong>Rating</strong><br />
+                            <span>{{mySelection.AggregateRating}}</span>
+                        </p>
+                        <p>
+                            <h4>Quotes</h4>
+                            <blockquote>{{mySelection.Quotes}}</blockquote>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <ui-gmap-google-map center="map.center" zoom="map.zoom">
+                            <ui-gmap-marker coords="map.center" idkey="1"></ui-gmap-marker>
+                        </ui-gmap-google-map>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

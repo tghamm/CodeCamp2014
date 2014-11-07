@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CodeCamp2014Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="triangle_restaurant_list">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="OpenTableWebsite" Type="varchar" MaxLength="92" />
+          <Property Name="AggregateRating" Type="real" />
+          <Property Name="Address" Type="varchar" MaxLength="73" />
+          <Property Name="Capacity" Type="smallint" />
+          <Property Name="Cuisine" Type="varchar" MaxLength="22" />
+          <Property Name="Pricing" Type="varchar" MaxLength="13" />
+          <Property Name="City" Type="varchar" MaxLength="13" />
+          <Property Name="Website" Type="varchar" MaxLength="54" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Phone" Type="varchar" MaxLength="14" />
+          <Property Name="Rating" Type="varchar" MaxLength="12" />
+          <Property Name="Quotes" Type="varchar" MaxLength="749" />
+          <Property Name="ReviewDate" Type="datetime" />
+          <Property Name="ReviewWebsite" Type="varchar" MaxLength="89" />
+          <Property Name="WebName" Type="varchar" MaxLength="50" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="Latitude" Type="float" />
+        </EntityType>
+        <EntityContainer Name="CodeCamp2014ModelStoreContainer">
+          <EntitySet Name="triangle_restaurant_list" EntityType="Self.triangle_restaurant_list" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CodeCamp2014Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CodeCamp2014Entities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="RestaurantEntries" EntityType="CodeCamp2014Model.RestaurantEntry" />
+        </EntityContainer>
+        <EntityType Name="RestaurantEntry">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="OpenTableWebsite" Type="String" MaxLength="92" FixedLength="false" Unicode="false" />
+          <Property Name="AggregateRating" Type="Single" />
+          <Property Name="Address" Type="String" MaxLength="73" FixedLength="false" Unicode="false" />
+          <Property Name="Capacity" Type="Int16" />
+          <Property Name="Cuisine" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="Pricing" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="54" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Quotes" Type="String" MaxLength="749" FixedLength="false" Unicode="false" />
+          <Property Name="ReviewDate" Type="DateTime" Precision="3" />
+          <Property Name="ReviewWebsite" Type="String" MaxLength="89" FixedLength="false" Unicode="false" />
+          <Property Name="WebName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="Latitude" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeCamp2014ModelStoreContainer" CdmEntityContainer="CodeCamp2014Entities" >
+          <EntitySetMapping Name="RestaurantEntries">
+            <EntityTypeMapping TypeName="CodeCamp2014Model.RestaurantEntry">
+              <MappingFragment StoreEntitySet="triangle_restaurant_list">
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="WebName" ColumnName="WebName" />
+                <ScalarProperty Name="ReviewWebsite" ColumnName="ReviewWebsite" />
+                <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+                <ScalarProperty Name="Quotes" ColumnName="Quotes" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pricing" ColumnName="Pricing" />
+                <ScalarProperty Name="Cuisine" ColumnName="Cuisine" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AggregateRating" ColumnName="AggregateRating" />
+                <ScalarProperty Name="OpenTableWebsite" ColumnName="OpenTableWebsite" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
