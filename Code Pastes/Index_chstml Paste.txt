@@ -1,0 +1,62 @@
+<h2 class="text-center">Welcome To The Random Triangle Restaurant Selector!</h2>
+
+
+
+<button class="text-center btn btn-primary btn-lg"
+        ng-click="getRandomRestaurant()"
+        style="display:block; margin-left:auto; margin-right: auto;">
+    Feed Me!
+</button>
+
+<div class="col-xs-12 ng-cloak">
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{{randomEntry.Name}}</h2>
+                <p>
+                    <ul class="list-inline list-unstyled">
+                        <li>
+                            {{randomEntry.Address}}
+                        </li>
+                        <li>|</li>
+                        <li>
+                            {{randomEntry.Phone}}
+                        </li>
+                        <li>|</li>
+                        <li>
+                            {{randomEntry.Email}}
+                        </li>
+                    </ul>
+                </p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p>
+                    <strong>Cuisine</strong><br />
+                    <span>{{randomEntry.Cuisine}}</span>
+                </p>
+                <p>
+                    <strong>Pricing</strong><br />
+                    <span>{{randomEntry.Pricing}}</span>
+                </p>
+                <p>
+                    <strong>Rating</strong><br />
+                    <span>{{randomEntry.AggregateRating}}</span>
+                </p>
+                <p>
+                    <h4>Quotes</h4>
+                    <blockquote>{{randomEntry.Quotes}}</blockquote>
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom">
+                    <ui-gmap-marker coords="map.center" idkey="1"></ui-gmap-marker>
+                </ui-gmap-google-map>
+            </div>
+        </div>
+
+    </div>
+
+</div>
