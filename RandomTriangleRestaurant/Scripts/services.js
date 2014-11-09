@@ -17,23 +17,27 @@ function randomRestService($http, $q) {
     }
 
     function getRandomRestaurant() {
+
         
         return $http({
             method: 'GET',
             url: 'http://localhost:57390/api/Random/GetRandom',
-            data: { },
+            data: {},
 
         }).then(function (response) {
             if (typeof response.data === 'object') {
+                debugger;
                 return angular.fromJson(response.data);
             } else {
-                return $q.reject('Unknown error. Please try again.');
+                return $q.reject('Unknown error. Please try again.');
             }
 
         }, function (response) {
-            var msg = 'Unknown error. Please try again.';
+            var msg = 'Unknown error. Please try again.';
             return $q.reject(msg);
         });
+
+        
     }
 
     function getAllRestaurants() {

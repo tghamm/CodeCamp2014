@@ -13,7 +13,7 @@ namespace RandomRestaurantService.Controllers
     public class RandomController : ApiController
     {
         private static Random rnd = new Random();
-        
+
         [HttpGet]
         public RestaurantEntry GetRandom()
         {
@@ -33,6 +33,5 @@ namespace RandomRestaurantService.Controllers
                 return entries;
             }
         }
-
     }
 }
